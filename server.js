@@ -10,10 +10,16 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS configuration - Error block avvakunda origins anni allow chestundi
+// CORS configuration - Frontend origin links correct ga manage chestundi
 app.use(cors({
-  origin: '*', 
-  credentials: true
+  origin: [
+    'https://share-a-meal-123.onrender.com',
+    'http://localhost:5173',
+    'http://localhost:3000'
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
