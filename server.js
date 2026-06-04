@@ -9,12 +9,13 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
 // CORS configuration - Frontend origin links correct ga manage chestundi
+
 app.use(cors({
   origin: [
-    'https://share-a-meal-123.onrender.com',
-    'http://localhost:5173',
+    'https://tender-fascination-production-e9e7.up.railway.app', 
+    'https://share-a-meal-123.onrender.com', 
+    'http://localhost:5173', 
     'http://localhost:3000'
   ],
   credentials: true,
